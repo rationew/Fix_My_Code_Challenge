@@ -13,21 +13,11 @@ if (process.argv.length <= 2) {
     process.exit(1)
 }
 
-const size = process.argv[2];
+size = parseInt(process.argv[2], 10)
 
-if (!size || isNaN(size)) {
-  console.log("Please provide a valid size.");
-} else {
-  // print first row
-  let square = "";
-  for (let i = 0; i < size; i++) {
-    square += "#";
-  }
-  console.log(square);
-
-  // print remaining rows
-  for (let i = 1; i < size; i++) {
-    console.log(square);
-  }
+for (let i = 0 ; i < size ; i ++) {
+    for (let j = 0 ; j < size ; j ++) {
+        process.stdout.write("#");
+    }
+    process.stdout.write("\n");
 }
-
